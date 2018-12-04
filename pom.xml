@@ -25,8 +25,29 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
+  <dependencyManagement>  <!-- HSF-->
+    <dependencies>
+      <dependency>
+        <!-- Import dependency management from Spring Boot -->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>1.5.14.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.taobao.pandora</groupId>
+        <artifactId>pandora-boot-starter-bom</artifactId>
+        <version>2018-08-stable-hsf-buc-bugfix</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
   <dependencies>
 
+    <!--Sping 依赖 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
@@ -54,13 +75,19 @@
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
     </dependency>
-
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+
+    <!--HSF 依赖 -->
+    <dependency>
+      <groupId>com.alibaba.boot</groupId>
+      <artifactId>pandora-hsf-spring-boot-starter</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>
